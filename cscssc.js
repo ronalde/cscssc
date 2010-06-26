@@ -7,18 +7,18 @@
 /* Copyright (C) 2005 datube */
 
 /*
-  Modified: $Author: ronalde $- $Date: 2006-02-26 13:08:17 +0100 (zo, 26 feb 2006) $ - $Rev: 39 $ 
+  Modified: $Author: datube $- $Date: 2005-11-08 13:29:00 +0100 (Tue, 08 Now 2005) $ - $Rev: 33 $ 
 */
 /* --- compress --- */
 // input: 
-//  (str) sin = valid css//  (bool) bs = single line//  (bool) bc = include comment
+//  (str) sin = valid css//  (bool) bs = single line//  (bool) ic = include comment
 // output:
 //   (str) compressed css
-function compress(sin, bs, ic){var sout= '';
+function compress(sin, bs, ic,bsort){var sout= '';
 var comp = 0;
 var re;  sout = sin;
 
-  bs=(typeof(bs)=='undefined')?false:bs;  ic=(typeof(ic)=='undefined')?false:ic;  
+  bs=(typeof(bs)=='undefined')?false:bs;  ic=(typeof(ic)=='undefined')?false:ic;    bsort=(typeof(bsort)=='undefined')?false:bsort;
       
   // I've not a lot of experience with Regular Expressions,
   // Any for additional add-ons.. please notify me!	
@@ -41,7 +41,7 @@ var re;  sout = sin;
     //trim leading and trailing spaces (if any left)
   sout = sout.replace(/^\s+/g, '').replace(/\s+$/g, '');
   // sort css definitions (only if no comments included)
-  if(!ic) sout = sortcss(sout);
+  if(!ic && bsort) sout = sortcss(sout);
   //and for the reading-ness of all.. replace -} or */- with - } and a line break -
   if(!bs){    sout = sout.replace(/}/g, '}\n');     sout=sout.replace(/\*\//g, '*\/\n');  
   }
