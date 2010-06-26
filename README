@@ -1,0 +1,48 @@
+$Author: ronalde $ - $Date: 2005-05-18 15:23:29 +0200 (wo, 18 mei 2005) $ - $Rev: 29 $
+
+csCSSc - Client-side CSS (De)Compressor
+
+
+This tool is developed by datube and may be used online on
+http://www.lacocina.nl/vrijesoftware/cscssc/css-compressor.html.
+
+The tool is a HTML-page with a Java-/ECMA-script file and serves the
+following purposes:
+
+   - Compress CSS-code to save bandwidth by removing unnecessary
+     white-space characters from CSS code 
+
+   - Decompress/pretty print CSS-code for readability and 
+     maintainability of the CSS-code
+
+     The typed or pasted CSS-code should be valid CSS Level 1 and/or 2 
+     code.
+
+
+
+Features of the compressor
+
+Currently the script performs the following actions on valid CSS-code:
+
+   - Optionally, remove all comments
+     All CSS comment-instructions can be removed, eg. everything between
+     `/*' and `*/'.
+
+   - Remove unnecessary white-space
+     All unnecessary white-space characters are removed. Additionaly,
+     one may choose to remove all newline characters as well, resulting 
+     in a single-line file.
+
+   - Remove unnecessary value-types
+     When a value of a property equals `0' (zero), the compressor will
+     remove type-declarations from the value, like `px' and `em'.
+
+
+Contact information
+
+Please contact cscssc-requests _ at _ lacocina.nl for questions,
+suggestions and remarks.
+
+
+    The webpage and scriptfile are free software release under the
+	    GNU/GPLv2 (see the file COPYING for details).

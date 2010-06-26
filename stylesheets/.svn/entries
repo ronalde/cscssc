@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="38"
+   name=""
+   committed-date="2005-05-26T10:36:13.206618Z"
+   url="svn+ssh://bytemark.lacocina.nl/usr/local/svn/cscssc/stylesheets"
+   last-author="ronalde"
+   kind="dir"
+   uuid="dda6e478-29f7-0310-9e8a-c6f642680b84"
+   repos="svn+ssh://bytemark.lacocina.nl/usr/local/svn/cscssc"
+   revision="39"/>
+<entry
+   committed-rev="38"
+   name="cscssc.css"
+   text-time="2005-05-26T10:36:14.000000Z"
+   committed-date="2005-05-26T10:36:13.206618Z"
+   checksum="63fd3fc336f1f41e2bafa210c5a11c28"
+   last-author="ronalde"
+   kind="file"
+   prop-time="2005-05-16T10:45:58.000000Z"/>
+</wc-entries>

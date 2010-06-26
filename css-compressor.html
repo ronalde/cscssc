@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+	<title>csCSSc: Client-side CSS Compressor &amp; Decompressor</title>
+	<meta http-equiv="content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="description" content="csCSSc is a javascript-based client-side  (de)compressor for Cascading StyleSheets (CSS) released under the GNU General Public License (GPL). csCSSc may save you bandwith and/or pretty-print your valid CSS-code." />
+	<meta name="keywords" content="css,gpl,jigsaw,lint,check,compress,pretty print,decompress" />
+
+	<!--
+	    This code compresses or pretty prints valid CSS code 
+	    
+	    Created:
+	    Author: datube - Date: 2005-05-14 - Revision: 0.2 
+
+            Modified: 
+	    $Author: ronalde $ - $Date: 2005-05-26 12:36:13 +0200 (do, 26 mei 2005) $ - $Rev: 38 $
+
+            These pages and scripts are free software; you can
+	    distribute them and/or modify it under the terms of the GNU GPL.  See
+	    the file COPYING.
+
+	-->
+
+	<link rel="start" title="Go to the directory index" href="./" />
+	<link rel="README" title="View the README file" href="README" />
+	<link rel="COPYING" title="View the GNU/GPL license" href="COPYING" />
+
+	<style type="text/css" title="Default" media="screen">
+	    @import url("stylesheets/cscssc.css");
+	</style>
+
+	<script type="text/javascript" src="cscssc.js">
+	</script>
+	<script type="text/javascript">
+	    //<![CDATA[
+	var frm ;
+
+	function body_onload(){frm = document.forms[0];}
+
+	function clear_onclick(field){
+	frm[field].value = '';
+	}
+
+	function compress_onclick(){
+	var sin = frm['cssin'].value;
+	var sout = compress(sin, frm['singleline'].checked, frm['includecomments'].checked);
+
+		frm['cssout'].value = sout;
+		//calculate compression (+fix for IE)
+		comp = Math.round(((sout.replace(/\r\n/g,'_').length+1)/(sin.replace(/\r\n/g,'_').length+1)) * 100);
+		//show it
+		frm['comp'].value = (comp)+'%';
+	}
+
+	function uncompress_onclick(){
+	var sin = frm['cssout'].value;
+	var style = optval(frm['style']);
+	var sunc = uncompress(sin,style);
+
+		frm['uncool'].value = sunc;
+		//calculate compression (+fix for IE)
+		comp = Math.round(((sunc.replace(/\r\n/g,'_').length+1)/(sin.replace(/\r\n/g,'_').length+1)) * 100);
+		//show it
+		frm['decomp'].value = (comp)+'%';
+	}
+
+	function optval(o){for(var i=0;i<=o.length;i++)if(o[i].checked)return o[i].value;}
+
+	window.onload=body_onload;
+	//]]>
+	</script>
+    </head>
+    <body>
+	<div id="pagemast">
+	    <h1>csCSSc</h1>
+	    <h2>Client-side CSS (De)Compressor</h2>
+	    <p><acronym title="Client-side CSS (De)Compressor">csCSSc</acronym> 
+		compresses and decompresses your <a
+		href="http://jigsaw.w3.org/css-validator/">valid CSS Level 1 &amp; 2
+		code</a> using <a href="cscssc.js">this javascript file</a>. 
+	    </p>
+	    
+	    <noscript>
+		<p><em>Note:
+		<br />Your browser must support javascript for this application to function properly. We invite you to create a platform agnostic command-line version.</em></p>
+	    </noscript>
+	</div>
+
+	<div id="contents">
+	    <form id="compressor" action="">
+		<fieldset>
+		    <legend>Original valid CSS-code</legend>
+		    <p>
+			<label for="cssin">
+			    Type or paste the CSS-code you would like to compress:
+			</label>
+			<br />
+			<textarea rows="10" cols="76" id="cssin"></textarea>
+		    </p>
+		    <p>
+			<input type="checkbox" id="includecomments" />
+			<label for="includecomments">include comments</label>
+			<br />
+			<input type="checkbox" id="singleline" />
+			<label for="singleline">single line</label>
+			<br />
+			<input type="button" accesskey="c" value="Compress" onclick="compress_onclick();" />
+			<input type="button" accesskey="l" value="Clear" onclick="clear_onclick('cssin');" />
+		    </p>
+		    
+		</fieldset>
+		
+		<fieldset>
+		    <legend>Compressed CSS-code</legend>
+		    <p>
+			<label for="comp">compression ratio:</label>
+			<input type="text" id="comp" value="0%" size="5" style="white-space:nowrap"  readonly="readonly" />	
+			<br />
+			<label for="cssout">
+			    Type or paste the CSS-code you would like to decompress:
+			</label><br />
+			<textarea rows="10" cols="76" id="cssout"></textarea>
+			<br />
+			
+			<label for="style">CSS notation:</label>
+			<input type="radio" id="style" name="style" value="0" checked="checked" />
+			<label for="style">type I</label>
+			<input type="radio" id="style1" name="style" value="1" />
+			<label for="style">type II</label>
+			<br />
+			<input type="button" value="Decompress" onclick="return uncompress_onclick();" />
+			<input type="button" accesskey="l" value="Clear" onclick="clear_onclick('cssout');" />
+		    </p>
+		</fieldset>
+		
+		<fieldset>
+		    <legend>Decompressed CSS-code</legend>
+		    <p>
+			<label for="decomp">decompression ratio:</label>
+			<input type="text" id="decomp" value="0%"  readonly="readonly" size="5" />	
+			<br />
+			<textarea rows="10" cols="76" id="uncool"></textarea>
+		    </p>
+		</fieldset>
+		
+	    </form>
+	    <p>
+		See the <a href="README">README</a> file for a general description and the purposes of this page and its scripts.
+	    </p>
+	    <p>
+		This is <em>free software</em> released under the terms of the
+		<a href="http://www.gnu.org/">
+		    <acronym title="GNU's Not Unix!">GNU</acronym>
+		</a>
+		/ 
+		<a href="http://www.gnu.org/gpl/">
+		    <acronym title="General Public License">GPL</acronym>v2
+		</a> 
+		as described in the file 
+		<a href="COPYING">COPYING</a>.
+	    </p>
+
+	</div>
+	<hr />
+	<div id="footer">
+	    <p>
+		Written by: datube
+		<br />
+		Modified: $Author: ronalde $- $Date: 2005-05-26 12:36:13 +0200 (do, 26 mei 2005) $ - $Rev: 38 $
+	    </p>
+	</div>
+
+    </body>
+</html>
