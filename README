@@ -1,6 +1,4 @@
-$Author: ronalde $ - $Date: 2005-05-18 15:23:29 +0200 (wo, 18 mei 2005) $ - $Rev: 29 $
-
-csCSSc - Client-side CSS (De)Compressor
+# csCSSc - Client-side CSS (De)Compressor
 
 This tool is developed by datube and may be used online on
 http://lacocina.nl/cscssc/css-compressor.html. The sources are
@@ -9,40 +7,51 @@ available at http://lacocina.nl/cscssc-git/.
 The tool is a HTML-page with a Java-/ECMA-script file and serves the
 following purposes:
 
-   - Compress CSS-code to save bandwidth by removing unnecessary
-     white-space characters from CSS code 
+- Compress CSS-code to save bandwidth by removing unnecessary
+  white-space characters from CSS code 
+- Decompress/pretty print CSS-code for readability and 
+  maintainability of the CSS-code
 
-   - Decompress/pretty print CSS-code for readability and 
-     maintainability of the CSS-code
-
-     The typed or pasted CSS-code should be valid CSS Level 1 and/or 2 
-     code.
-
+  The typed or pasted CSS-code should be valid CSS Level 1 and/or 2
+  code.
 
 
-Features of the compressor
+## Features of the compressor
 
 Currently the script performs the following actions on valid CSS-code:
 
-   - Optionally, remove all comments
-     All CSS comment-instructions can be removed, eg. everything between
-     `/*' and `*/'.
-
-   - Remove unnecessary white-space
-     All unnecessary white-space characters are removed. Additionaly,
-     one may choose to remove all newline characters as well, resulting 
-     in a single-line file.
-
-   - Remove unnecessary value-types
-     When a value of a property equals `0' (zero), the compressor will
-     remove type-declarations from the value, like `px' and `em'.
+- Optionally, remove all comments
+  All CSS comment-instructions can be removed, eg. everything between
+  `/*` and `*/`.
+- Remove unnecessary white-space
+  All unnecessary white-space characters are removed. Additionaly,
+  one may choose to remove all newline characters as well, resulting 
+  in a single-line file.
+- Remove unnecessary value-types
+  When a value of a property equals `0` (zero), the compressor will
+  remove type-declarations from the value, like `px` and `em`.
 
 
-Contact information
+## Suggestions and remarks
 
-Please contact cscssc-requests _ at _ lacocina.nl for questions,
-suggestions and remarks.
+When you have questions, suggestions or remarks, please have a look at
+at [current issues][#issues] or file a new one.
 
 
-    The webpage and scriptfile are free software release under the
-	    GNU/GPLv2 (see the file COPYING for details).
+ The webpage, script and accompanying files are free software,
+ released under the GNU/GPLv2 (see the file [COPYING][#gpl] for
+ details).
+
+
+## Changelog
+
+- 2005-05-18: [First published][#lacocina]
+- 2005-05-26: [Submission at the free software directory][#fsf]
+- 2016-01-17: [Sourced moved from local subversion to git at github][#github]
+
+
+[#lacocina]: http://www.lacocina.nl/vrijesoftware/cscssc/
+[#fsf]: https://directory.fsf.org/wiki/CsCSSc
+[#github]: https://github.com/ronalde/cscssc/
+[#issues]: https://github.com/ronalde/cscssc/issues
+[#gpl]: https://github.com/ronalde/cscssc/blob/master/COPYING
