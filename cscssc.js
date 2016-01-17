@@ -67,7 +67,7 @@ var sout = sin;
   
   return sout;
 }//--------------------------------------------------------------
-
+
 function uncompress(sin,style){
 var sout= '';
 
@@ -209,4 +209,4 @@ var c='';var i=0;
   sout = css[1].join('}')+((css[1].length!=0)?'}':'')+         css[2].join('}')+((css[2].length!=0)?'}':'')+         css[3].join('}')+((css[3].length!=0)?'}':''); 
          
   return  sout;
-}
+}
