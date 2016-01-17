@@ -2,9 +2,9 @@ $Author: ronalde $ - $Date: 2005-05-18 15:23:29 +0200 (wo, 18 mei 2005) $ - $Rev
 
 csCSSc - Client-side CSS (De)Compressor
 
-
 This tool is developed by datube and may be used online on
-http://www.lacocina.nl/vrijesoftware/cscssc/css-compressor.html.
+http://lacocina.nl/cscssc/css-compressor.html. The sources are
+available at http://lacocina.nl/cscssc-git/.
 
 The tool is a HTML-page with a Java-/ECMA-script file and serves the
 following purposes:
