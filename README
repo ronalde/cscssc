@@ -1,57 +1,6 @@
-# csCSSc - Client-side CSS (De)Compressor
 
-This tool is developed by datube and may be used online on
-http://lacocina.nl/cscssc/css-compressor.html. The sources are
-available at http://lacocina.nl/cscssc-git/.
+# moved to https://gitlab.com/ronalde/cscssc due to Microsoft deal
 
-The tool is a HTML-page with a Java-/ECMA-script file and serves the
-following purposes:
+Although Microsoft and partners push the message that Microsoft is Developer and open source friendly due to its new CEO and strategy, I don't believe it. And neither should you. New CEO or not, it is of course the investors that dictate strategy. And open source simply isn't a viable option when you're in the money-making business.
 
-- Compress CSS-code to save bandwidth by removing unnecessary
-  white-space characters from CSS code 
-- Decompress/pretty print CSS-code for readability and 
-  maintainability of the CSS-code
-
-  The typed or pasted CSS-code should be valid CSS Level 1 and/or 2
-  code.
-
-
-## Features of the compressor
-
-Currently the script performs the following actions on valid CSS-code:
-
-- Optionally, remove all comments
-  All CSS comment-instructions can be removed, eg. everything between
-  `/*` and `*/`.
-- Remove unnecessary white-space
-  All unnecessary white-space characters are removed. Additionaly,
-  one may choose to remove all newline characters as well, resulting 
-  in a single-line file.
-- Remove unnecessary value-types
-  When a value of a property equals `0` (zero), the compressor will
-  remove type-declarations from the value, like `px` and `em`.
-
-
-## Suggestions and remarks
-
-When you have questions, suggestions or remarks, please have a look at
-at [current issues][#issues] or file a new one.
-
-
- The webpage, script and accompanying files are free software,
- released under the GNU/GPLv2 (see the file [COPYING][#gpl] for
- details).
-
-
-## Changelog
-
-- 2005-05-18: [First published][#lacocina]
-- 2005-05-26: [Submission at the free software directory][#fsf]
-- 2016-01-17: [Sourced moved from local subversion to git at github][#github]
-
-
-[#lacocina]: http://www.lacocina.nl/vrijesoftware/cscssc/
-[#fsf]: https://directory.fsf.org/wiki/CsCSSc
-[#github]: https://github.com/ronalde/cscssc/
-[#issues]: https://github.com/ronalde/cscssc/issues
-[#gpl]: https://github.com/ronalde/cscssc/blob/master/COPYING
+That means that sooner rather than later this at best will turn out to be an embrace, extend, and extinguish deal.
